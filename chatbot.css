@@ -1,0 +1,188 @@
+/* Container for the chatbot button */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: Arial, sans-serif;
+    z-index: 1000; /* Ensure chatbot is above other elements */
+}
+
+/* Style for the chatbot button */
+#chatbot-button {
+    background: transparent; /* Remove background color */
+    border: none;
+    padding: 0; /* Remove padding */
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    transition: transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Style for the chatbot */
+#chatbot {
+    display: none;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: fixed;
+    right: 10px;
+    bottom: 20px; /* Gap from the bottom */
+    top: 50px;
+    width: 400px; /* Adjust width to fit the right side */
+    height: calc(100% - 40px); /* Height minus gap */
+    transition: transform 0.3s ease; /* Smooth transition for opening/closing */
+}
+
+/* Style for the chatbot header */
+#chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003636;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid #003636; /* Add border for separation */
+}
+
+/* Style for the chatbot body */
+#chatbot-body {
+    padding: 10px;
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align messages from bottom to top */
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.8), /* Fade effect */
+        rgba(255, 255, 255, 0.8) /* More opaque at the bottom */
+    ),
+    url('/images/bg.jfif'); /* Background image */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+/* Style for the chatbot messages */
+#chatbot-messages {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
+}
+
+/* Style for individual messages */
+#chatbot-messages .message {
+    padding: 10px;
+    font-size: 14px; /* Adjust font size for readability */
+}
+
+/* Style for user messages */
+#chatbot-messages .user-message {
+    background-color: #f1f1f1;
+    align-self: flex-end; /* Align messages to the right */
+    border-radius: 5px; /* Slight rounding */
+}
+
+/* Style for bot messages */
+#chatbot-messages .bot-message {
+    background-color: #bdf2f2;
+    align-self: flex-start; /* Align messages to the left */
+    border-radius: 5px; /* Slight rounding */
+}
+
+/* Style for suggested questions */
+#suggested-questions {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+/* Style for suggestion buttons */
+.suggestion {
+    background-color: #c1c3c4;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for suggestion buttons */
+.suggestion:hover {
+    background-color: #003636;
+}
+
+/* Style for input container */
+#chatbot-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Style for text area */
+#chatbot-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 25px; /* Reduce bottom margin for better spacing */
+    font-size: 14px; /* Adjust font size for readability */
+    resize: none; /* Prevent resizing */
+}
+
+/* Style for send button */
+#chatbot-send {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 25px; /* Reduce bottom margin for better spacing */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for send button */
+#chatbot-send:hover {
+    background-color: #003636;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+    #chatbot {
+        width: 100%;
+        right: 0;
+        bottom: 20px; /* Gap from the bottom */
+        top: 0;
+        height: calc(100% - 40px); /* Height minus gap */
+    }
+
+    #chatbot-button {
+        width: 50px; /* Adjust size of the button */
+        height: 70px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #chatbot-button {
+        width: 40px; /* Further adjust size of the button for smaller screens */
+        height: 60px;
+    }
+}

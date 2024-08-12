@@ -1,0 +1,145 @@
+
+/* General Page Styles */
+html, body {
+    margin: 0;
+    padding: 0; /* Reset default padding */
+    font-family: Arial, sans-serif;
+    padding-top: 17px; /* To ensure content is not hidden behind the fixed navbar */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003636;
+    /* padding: 5px 5px; Adjusted padding for better responsiveness */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding is included in width */
+    height: 63px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to next line if necessary */
+}
+
+.navbar a {
+    color: white;
+    padding: 12px 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.navbar a:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Active Link Styles */
+.navbar .nav-links a.active,
+.side-menu a.active {
+    background-color: #002323; /* or any color that suits your design */
+    color: white;
+    /* font-weight: bold; */
+    /* height: 30px; */
+}
+
+.navbar img {
+    height: 50px;
+    width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.navbar img:hover {
+    transform: scale(1.1);
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Side Menu */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    right: 0; /* Changed from left to right */
+    background-color: #3a8378;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: black;
+}
+
+.side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row-reverse; /* Reverse the direction to shift logo to the right */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+    .navbar .nav-links {
+        display: none; /* Hide nav links on small screens */
+    }
+    .hamburger {
+        display: block; /* Show hamburger menu on small screens */
+    }
+    .container {
+        padding: 10px; /* Adjust container padding for smaller screens */
+    }
+    .navbar a {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        margin-right: 10px; /* Adjust margin for smaller screens */
+    }
+    .navbar img {
+        height: 40px; /* Adjust image size for smaller screens */
+        width: 80px; /* Adjust image size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row-reverse;
+        padding: 5px; /* Further reduce padding for very small screens */
+    }
+    .navbar a {
+        font-size: 14px; /* Further adjust font size for very small screens */
+        margin-right: 5px; /* Further adjust margin for very small screens */
+    }
+    .navbar img {
+        height: 30px; /* Further adjust image size for very small screens */
+        width: 60px; /* Further adjust image size for very small screens */
+    }
+}

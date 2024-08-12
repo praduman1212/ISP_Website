@@ -1,0 +1,94 @@
+
+.stats-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.text-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stats-header {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stats-subheader {
+    font-size: 20px;
+    color: #6b6a6a;
+    margin-bottom: 30px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    flex: 1;
+    min-width: 150px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box .stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(0, 138, 110);
+    margin-bottom: 10px;
+}
+
+.stat-box .stat-description {
+    font-size: 16px;
+    color: #333;
+}
+
+.stats-image {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .stats-section {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 60px 40px;
+    }
+
+    .text-container {
+        text-align: left;
+        max-width: 600px;
+        margin-bottom: 0;
+        margin-left: 80px; /* Moved this here for larger screens */
+    }
+
+    .stats-image {
+        max-width: 50%;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-box {
+        width: 90%; /* Make stat boxes take more width on smaller screens */
+        margin: 10px 0;
+    }
+}
